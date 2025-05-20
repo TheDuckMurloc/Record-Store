@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace RecordStore.Core.Interfaces
 {
-    internal interface IRecordRepository
+    internal interface IArtistRepository
     {
-        IEnumerable<Record> GetAll();
-        Record? GetById(int id);
-        void Add(Record record);
-        void Update(Record record);
+        IEnumerable<Artist> GetAll();
+        Artist? GetById(int id);
+        void Add(Artist artist);
+        void Update(Artist artist);
         void Delete(int id);
     }
 }

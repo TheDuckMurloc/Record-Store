@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RecordStore.Core.Interfaces
+namespace RecordStore.Business.Interfaces
 {
-    internal interface IRecordRepository
+    internal interface IGenreRepository
     {
-        IEnumerable<Record> GetAll();
-        Record? GetById(int id);
-        void Add(Record record);
+        IEnumerable<Genre> GetAll();
+        Genre? GetById(int id);
+        void Add(Genre record);
         void Update(Record record);
         void Delete(int id);
     }
