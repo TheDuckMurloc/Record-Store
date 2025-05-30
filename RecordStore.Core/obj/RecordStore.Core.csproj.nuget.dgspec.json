@@ -1,28 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Myron\\RecordStore.Core\\RecordStore.Core.csproj": {}
+    "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Myron\\RecordStore.Core\\RecordStore.Core.csproj": {
+    "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Myron\\RecordStore.Core\\RecordStore.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj",
         "projectName": "RecordStore.Core",
-        "projectPath": "C:\\Users\\Myron\\RecordStore.Core\\RecordStore.Core.csproj",
-        "packagesPath": "C:\\Users\\Myron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Myron\\RecordStore.Core\\obj\\",
+        "projectPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj",
+        "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Myron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gebruiker\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -44,12 +44,11 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

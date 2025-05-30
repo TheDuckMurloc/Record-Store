@@ -1,7 +1,24 @@
+using Microsoft.EntityFrameworkCore;
+using RecordStore.Core.Interfaces;
+using RecordStore.Data.Repositories;
+using RecordStore.Web.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddHttpContextAccessor();
+
+// Get connection string from configuration
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Register repositories
+builder.Services.AddScoped<RecordRepository>(sp => 
+    new RecordRepository(connectionString ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+
+// Register application services
+builder.Services.AddScoped<CartService>();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -14,13 +31,11 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseStaticFiles();
+app.UseSession();
 app.UseRouting();
-
 app.UseAuthorization();
 
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.MapRazorPages();
 
 app.Run();

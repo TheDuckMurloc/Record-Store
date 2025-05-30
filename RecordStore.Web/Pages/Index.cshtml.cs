@@ -1,19 +1,44 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using RecordStore.Core.Models;
+using RecordStore.Data.Repositories;
+using RecordStore.Web.Services;
 
-namespace RecordStore.Web.Pages;
-
-public class IndexModel : PageModel
+namespace RecordStore.Web.Pages
 {
-    private readonly ILogger<IndexModel> _logger;
-
-    public IndexModel(ILogger<IndexModel> logger)
+    public class IndexModel : PageModel
     {
-        _logger = logger;
-    }
+        private readonly RecordRepository _recordRepository;
+        private readonly CartService _cartService;
 
-    public void OnGet()
-    {
+        public IndexModel(RecordRepository recordRepository, CartService cartService)
+        {
+            _recordRepository = recordRepository;
+            _cartService = cartService;
+        }
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
+        public List<Record> Records { get; set; }
+
+        public void OnGet()
+        {
+            Records = _recordRepository.GetAllRecords();
+
+            if (!string.IsNullOrWhiteSpace(SearchTerm))
+            {
+                Records = Records.Where(r =>
+                    r.Title.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ||
+                    r.Artist.Name.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase)
+                ).ToList();
+            }
+        }
+
+        public IActionResult OnPostAddToCart(int recordId)
+        {
+            _cartService.AddToCart(recordId);
+            return RedirectToPage();
+        }
     }
-}
+} 
