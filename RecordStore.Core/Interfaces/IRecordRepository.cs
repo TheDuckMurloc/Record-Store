@@ -5,8 +5,8 @@ namespace RecordStore.Core.Interfaces;
 public interface IRecordRepository
 {
     IEnumerable<Record> GetAll();
+    IEnumerable<Record> GetAllRecords();
     Record? GetById(int id);
-    void Add(Record record);
-    void Update(Record record);
-    void Delete(int id);
+    Record? GetRecordById(int id);
 }
+

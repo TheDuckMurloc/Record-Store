@@ -1,23 +1,23 @@
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using RecordStore.Core.Interfaces;
 using RecordStore.Data.Repositories;
-using RecordStore.Web.Services;
+using RecordStore.Data.Services;
+using RecordStore.Web.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
-builder.Services.AddHttpContextAccessor();
-
-// Get connection string from configuration
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+if (string.IsNullOrEmpty(connectionString))
+    throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-// Register repositories
-builder.Services.AddScoped<RecordRepository>(sp => 
-    new RecordRepository(connectionString ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.")));
+builder.Services.AddScoped<IRecordRepository>(sp => new RecordRepository(connectionString));
 
-// Register application services
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped<ICartRepository, CookieCartRepository>();
 builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<RecordService>();
+
+builder.Services.AddRazorPages();
 builder.Services.AddSession();
 
 var app = builder.Build();
@@ -26,7 +26,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

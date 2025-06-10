@@ -1,19 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RecordStore.Core.Models;
-using RecordStore.Data.Repositories;
-using RecordStore.Web.Services;
+using RecordStore.Core.Interfaces; 
+using RecordStore.Data.Services;    
 
 namespace RecordStore.Web.Pages
 {
     public class DetailsModel : PageModel
     {
-        private readonly RecordRepository _recordRepository;
+        private readonly RecordService _recordService;
         private readonly CartService _cartService;
 
-        public DetailsModel(RecordRepository recordRepository, CartService cartService)
+        public DetailsModel(RecordService recordService, CartService cartService)
         {
-            _recordRepository = recordRepository;
+            _recordService = recordService;
             _cartService = cartService;
         }
 
@@ -21,8 +21,8 @@ namespace RecordStore.Web.Pages
 
         public IActionResult OnGet(int id)
         {
-            Record = _recordRepository.GetRecordById(id);
-            
+            Record = _recordService.GetRecordById(id);
+
             if (Record == null)
             {
                 return NotFound();
@@ -37,4 +37,4 @@ namespace RecordStore.Web.Pages
             return RedirectToPage("/Cart");
         }
     }
-} 
+}

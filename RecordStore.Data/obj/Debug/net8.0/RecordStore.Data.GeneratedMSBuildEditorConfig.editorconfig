@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RecordStore.Data
-build_property.ProjectDir = C:\Users\Gebruiker\Source\Repos\Record-Store\RecordStore.Data\
+build_property.ProjectDir = C:\Users\Gebruiker\source\repos\Record-Store\RecordStore.Data\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

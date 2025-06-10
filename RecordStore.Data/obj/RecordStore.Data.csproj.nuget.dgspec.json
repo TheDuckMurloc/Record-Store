@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj": {}
+    "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj": {
+    "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj",
         "projectName": "RecordStore.Core",
-        "projectPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj",
+        "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\obj\\",
+        "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj": {
+    "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj",
         "projectName": "RecordStore.Data",
-        "projectPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj",
+        "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Data\\RecordStore.Data.csproj",
         "packagesPath": "C:\\Users\\Gebruiker\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Data\\obj\\",
+        "outputPath": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,8 +98,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj": {
-                "projectPath": "C:\\Users\\Gebruiker\\Source\\Repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj"
+              "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj": {
+                "projectPath": "C:\\Users\\Gebruiker\\source\\repos\\Record-Store\\RecordStore.Core\\RecordStore.Core.csproj"
               }
             }
           }
@@ -119,6 +119,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.1.5, )"

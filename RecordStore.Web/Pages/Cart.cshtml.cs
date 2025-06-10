@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RecordStore.Core.Models;
-using RecordStore.Web.Services;
+using RecordStore.Data.Services;
 
 namespace RecordStore.Web.Pages;
 
