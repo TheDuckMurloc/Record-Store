@@ -88,6 +88,29 @@ namespace RecordStore.Data.Services
             }
 
             return total;
+
         }
+        public bool Checkout()
+        {
+            var cart = _cartRepository.LoadCart();
+
+            foreach (var item in cart)
+            {
+                var record = _recordRepository.GetRecordById(item.RecordId);
+                if (record == null || record.Stock < item.Quantity)
+                {
+                    return false; 
+                }
+            }
+
+            foreach (var item in cart)
+            {
+                _recordRepository.DecreaseStock(item.RecordId, item.Quantity);
+            }
+
+            _cartRepository.ClearCart();
+            return true;
+        }
+
     }
 }

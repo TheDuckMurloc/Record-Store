@@ -110,5 +110,19 @@ namespace RecordStore.Data.Repositories
 
             return record;
         }
+        public void DecreaseStock(int recordId, int quantity)
+        {
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            using var command = new SqlCommand(
+                "UPDATE Records SET Stock = Stock - @Quantity WHERE RecordID = @RecordID", connection);
+
+            command.Parameters.AddWithValue("@Quantity", quantity);
+            command.Parameters.AddWithValue("@RecordID", recordId);
+
+            command.ExecuteNonQuery();
+        }
+
     }
 }

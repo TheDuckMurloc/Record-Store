@@ -8,5 +8,7 @@ public interface IRecordRepository
     IEnumerable<Record> GetAllRecords();
     Record? GetById(int id);
     Record? GetRecordById(int id);
+    void DecreaseStock(int recordId, int quantity);
+
 }
 

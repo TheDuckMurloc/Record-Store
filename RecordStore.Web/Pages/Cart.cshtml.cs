@@ -41,6 +41,15 @@ public class CartModel : PageModel
 
     public IActionResult OnPostCheckout()
     {
-        return RedirectToPage("/Index");
+        bool success = _cartService.Checkout();
+
+        if (!success)
+        {
+            ModelState.AddModelError("", "One or more items are out of stock.");
+            return Page();
+        }
+
+        return RedirectToPage("/Index"); 
     }
-} 
+
+}
