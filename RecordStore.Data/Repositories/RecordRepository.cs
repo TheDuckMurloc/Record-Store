@@ -28,7 +28,7 @@ namespace RecordStore.Data.Repositories
             connection.Open();
 
             using var command = new SqlCommand(
-                "SELECT r.RecordID, r.Title, r.Price, r.CoverImageURL, " +
+                "SELECT r.RecordID, r.Title, r.Price, r.Stock, r.CoverImageURL, " +
                 "a.ArtistID, a.Name AS ArtistName, " +
                 "g.GenreID, g.Name AS GenreName " +
                 "FROM Records r " +
@@ -43,6 +43,7 @@ namespace RecordStore.Data.Repositories
                     RecordID = reader.GetInt32(reader.GetOrdinal("RecordID")),
                     Title = reader.GetString(reader.GetOrdinal("Title")),
                     Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                    Stock = reader.GetInt32(reader.GetOrdinal("Stock")),
                     CoverImageUrl = reader.GetString(reader.GetOrdinal("CoverImageURL")),
                     Artist = new Artist
                     {
@@ -74,7 +75,7 @@ namespace RecordStore.Data.Repositories
             connection.Open();
 
             using var command = new SqlCommand(
-                "SELECT r.RecordID, r.Title, r.Price, r.CoverImageURL, " +
+                "SELECT r.RecordID, r.Title, r.Price, r.Stock, r.CoverImageURL, " +
                 "a.ArtistID, a.Name AS ArtistName, " +
                 "g.GenreID, g.Name AS GenreName " +
                 "FROM Records r " +
@@ -92,6 +93,7 @@ namespace RecordStore.Data.Repositories
                     RecordID = reader.GetInt32(reader.GetOrdinal("RecordID")),
                     Title = reader.GetString(reader.GetOrdinal("Title")),
                     Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                    Stock = reader.GetInt32(reader.GetOrdinal("Stock")),
                     CoverImageUrl = reader.GetString(reader.GetOrdinal("CoverImageURL")),
                     Artist = new Artist
                     {

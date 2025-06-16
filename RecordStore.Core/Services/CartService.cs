@@ -20,16 +20,27 @@ namespace RecordStore.Data.Services
 
         public void AddToCart(int recordId)
         {
+            var record = _recordRepository.GetRecordById(recordId);
+            if (record == null || record.Stock <= 0)
+                return; 
+
             var cart = _cartRepository.LoadCart();
             var existing = cart.FirstOrDefault(c => c.RecordId == recordId);
 
             if (existing != null)
-                existing.Quantity++;
+            {
+                if (existing.Quantity < record.Stock)
+                    existing.Quantity++;
+               
+            }
             else
+            {
                 cart.Add(new CartItem { RecordId = recordId, Quantity = 1 });
+            }
 
             _cartRepository.SaveCart(cart);
         }
+
 
         public void RemoveFromCart(int recordId)
         {

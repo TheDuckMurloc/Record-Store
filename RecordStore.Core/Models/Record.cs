@@ -6,7 +6,7 @@ public class Record
     public string Title { get; set; }
     public decimal Price { get; set; }
     public string CoverImageUrl { get; set; }
-    public int Year { get; set; }
+    public int Stock { get; set; }
 
     public Artist Artist { get; set; }
     public Genre Genre { get; set; }

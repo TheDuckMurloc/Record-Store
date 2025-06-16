@@ -41,6 +41,6 @@ public class CartModel : PageModel
 
     public IActionResult OnPostCheckout()
     {
-        return RedirectToPage("/Checkout");
+        return RedirectToPage("/Index");
     }
 } 

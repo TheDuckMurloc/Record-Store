@@ -36,8 +36,6 @@
                         <h5 class="card-title">@record.Title</h5>
                         <p class="card-text">
                             <strong>Artist:</strong> @(record.Artist?.Name ?? "Unknown")<br />
-                            <strong>Genre:</strong> @(record.Genre?.Name ?? "Unknown")<br />
-                            <strong>Year:</strong> @record.Year<br />
                             <strong>Price:</strong> @record.Price.ToString("C")
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
