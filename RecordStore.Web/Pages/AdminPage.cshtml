@@ -1,0 +1,35 @@
+﻿@page
+@model AdminPageModel
+@{
+    ViewData["Title"] = "Manage Stock";
+}
+
+<h2>Manage Record Stock</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Artist</th>
+            <th>Stock</th>
+            <th>Update</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model.Records)
+        {
+            <tr>
+                <td>@record.Title</td>
+                <td>@record.Artist.Name</td>
+                <td>@record.Stock</td>
+                <td>
+                    <form method="post">
+                        <input type="hidden" name="RecordId" value="@record.RecordID" />
+                        <input type="number" name="NewStock" min="0" />
+                        <button type="submit" asp-page-handler="UpdateStock">Update</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -21,13 +21,25 @@
                 </button>
 
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
+                    @{
+                        var roles = Context.Session.GetString("Roles");
+                        var isAdmin = roles != null && roles.Contains("Admin");
+                    }
+
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                    </ul>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Logout">Log Out</a>
+                        </li>
+                        @if (isAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/AdminPage">Admin</a>
+                            </li>
+                        }
 
-                    <!-- Cart button -->
                     <a class="btn btn-primary ms-auto" asp-area="" asp-page="/Cart">
                         Cart
                     </a>

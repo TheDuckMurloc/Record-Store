@@ -9,6 +9,8 @@ public interface IRecordRepository
     Record? GetById(int id);
     Record? GetRecordById(int id);
     void DecreaseStock(int recordId, int quantity);
+    void UpdateStock(int recordId, int newStock);
+
 
 }
 

@@ -21,9 +21,15 @@ namespace RecordStore.Web.Pages
 
         public List<Record> Records { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Username")))
+            {
+                return RedirectToPage("/Login");
+            }
+
             Records = _recordService.GetRecords(SearchTerm);
+            return Page();
         }
 
         public IActionResult OnPostAddToCart(int recordId)

@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Gebruiker\source\repos\Record-Store\RecordStore.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Gebruiker/source/repos/Record-Store/RecordStore.Web/Pages/AdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Gebruiker/source/repos/Record-Store/RecordStore.Web/Pages/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -32,6 +36,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Gebruiker/source/repos/Record-Store/RecordStore.Web/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gebruiker/source/repos/Record-Store/RecordStore.Web/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Gebruiker/source/repos/Record-Store/RecordStore.Web/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Gebruiker/source/repos/Record-Store/RecordStore.Web/Pages/Privacy.cshtml]

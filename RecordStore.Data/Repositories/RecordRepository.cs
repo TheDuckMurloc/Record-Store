@@ -123,6 +123,19 @@ namespace RecordStore.Data.Repositories
 
             command.ExecuteNonQuery();
         }
+        public void UpdateStock(int recordId, int newStock)
+        {
+            using var connection = new SqlConnection(_connectionString);
+            connection.Open();
+
+            using var command = new SqlCommand(
+                "UPDATE Records SET Stock = @Stock WHERE RecordID = @RecordID", connection);
+
+            command.Parameters.AddWithValue("@Stock", newStock);
+            command.Parameters.AddWithValue("@RecordID", recordId);
+
+            command.ExecuteNonQuery();
+        }
 
     }
 }
