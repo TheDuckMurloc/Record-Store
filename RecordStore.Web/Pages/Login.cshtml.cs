@@ -29,7 +29,7 @@ namespace RecordStore.Web.Pages
             if (user != null)
             {
                 HttpContext.Session.SetString("Username", user.Username);
-                HttpContext.Session.SetString("Role", user.Role);
+                HttpContext.Session.SetString("Role", user.Role.ToString());
                 return RedirectToPage("/Index");
             }
 

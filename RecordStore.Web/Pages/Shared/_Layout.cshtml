@@ -22,8 +22,8 @@
 
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between" id="navbarSupportedContent">
                     @{
-                        var roles = Context.Session.GetString("Roles");
-                        var isAdmin = roles != null && roles.Contains("Admin");
+                        var role = Context.Session.GetString("Role");
+                        var isAdmin = role == "1"; 
                     }
 
                     <ul class="navbar-nav flex-grow-1">

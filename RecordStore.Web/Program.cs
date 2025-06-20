@@ -12,6 +12,8 @@ if (string.IsNullOrEmpty(connectionString))
     throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddScoped<IUserRepository>(provider =>
     new UserRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IUserRoleRepository>(provider =>
+    new UserRoleRepository(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<IRecordRepository>(sp => new RecordRepository(connectionString));
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
@@ -19,6 +21,7 @@ builder.Services.AddScoped<ICartRepository, CookieCartRepository>();
 builder.Services.AddScoped<CartService>();
 builder.Services.AddScoped<RecordService>();
 builder.Services.AddScoped<IAdminRepository, AdminService>();
+
 
 
 

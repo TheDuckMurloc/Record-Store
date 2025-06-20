@@ -28,8 +28,8 @@ namespace RecordStore.Web.Pages
 
         public IActionResult OnGet()
         {
-            var roles = HttpContext.Session.GetString("Roles");
-            if (roles == null || !roles.Contains("Admin"))
+            var roles = HttpContext.Session.GetString("Role");
+            if (roles == null || !roles.Contains("1"))
             {
                 return RedirectToPage("/Login");
             }
